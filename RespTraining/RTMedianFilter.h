@@ -11,6 +11,6 @@
 @interface RTMedianFilter : NSObject
 @property (nonatomic, readonly) double x;
 @property (nonatomic, readonly) size_t order; //order of the filter
-- (void)addValue:(double)x;
+- (void)addValue:(double)value;
 - (instancetype)initWithOrder:(size_t)order; //designated initialiser (defaults to 3)
 @end

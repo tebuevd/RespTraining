@@ -8,7 +8,7 @@
 
 #import "RTMedianFilter.h"
 
-static const size_t defaultOrder = 3;
+static const size_t defaultOrder = 5;
 
 @interface RTMedianFilter()
 {
@@ -28,22 +28,18 @@ int compare(const void *first, const void *second)
     return 0;
 }
 
-//getter for the x-value
-- (double)x
-{
-    double temp[self.order];
-    memcpy(temp, storage, sizeof(temp));
-    qsort(temp, self.order, sizeof(double), compare);
-    return temp[self.order / 2];
-}
-
 //inputting a value to the filter
-- (void)addValue:(double)x
+- (void)addValue:(double)value
 {
     memmove((void *)storage, (const void *)(storage + 1),
             (self.order - 1) * sizeof(double));
-    storage[self.order] = x;
+    storage[self.order - 1] = value;
     
+    //update the x
+    double temp[self.order];
+    memcpy(temp, storage, sizeof(temp));
+    qsort(temp, self.order, sizeof(double), compare);
+    self.x = temp[self.order / 2];
 }
 
 //designated initialiser

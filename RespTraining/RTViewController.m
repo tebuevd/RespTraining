@@ -18,7 +18,7 @@
 @property (strong, nonatomic) NSInputStream *connection;
 
 @property (strong, nonatomic) SBRespData *dataObject;
-@property (strong, nonatomic) RTLowPassFilter *filter;
+@property (strong, nonatomic) RTMedianFilter *filter;
 @property (atomic) BOOL filterFlag;
 
 @property (strong, nonatomic) NSDate *today; //keep track of time
@@ -39,8 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.filter = [[RTLowPassFilter alloc] initWithSampleRate:filterRate
-                                         cutoffFrequency:filterCutoffFrequency];
+    self.filter = [[RTMedianFilter alloc] initWithOrder:3];
     self.filterFlag = NO;
 }
 
@@ -101,13 +100,17 @@
     //calculate the time interval since the start of the app
     NSDate *now = [NSDate date];
     double dt = [now timeIntervalSinceDate:self.today];
-    NSLog(@"Value: %d Time: %f", value, dt);
     
     [self.filter addValue:(double)value];
     if (self.filterFlag) {
         [self.graphView addX:self.filter.x];
+        NSLog(@"Value: %f Time: %f", self.filter.x, dt);
     }
-    else [self.graphView addX:value];
+    else {
+        [self.graphView addX:value];
+        NSLog(@"Value: %d Time: %f", value, dt);
+    }
+    
 }
 
 //wrapper method to update the state of the connect button
