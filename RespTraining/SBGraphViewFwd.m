@@ -16,7 +16,7 @@
 // Width of Marker
 #define SBGraphViewMarkerWidthPx 20
 // Width of delta t
-#define SBGraphViewDeltaX 6
+#define SBGraphViewDeltaX 2
 // Number of points in SBGraphViewSegment
 #define SBGraphViewSegmentSize 32
 // Overlap between graph segments

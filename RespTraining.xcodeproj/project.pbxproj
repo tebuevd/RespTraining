@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		656AF5441980611B00B60C09 /* SBData.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5431980611B00B60C09 /* SBData.m */; };
 		656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5471980623700B60C09 /* SBGraphViewFwd.m */; };
+		656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B736E19882FFF00F06B05 /* RTLowPassFilter.m */; };
 		657EBA1B197DBF4F00E1328D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1A197DBF4F00E1328D /* Foundation.framework */; };
 		657EBA1D197DBF4F00E1328D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */; };
 		657EBA1F197DBF4F00E1328D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1E197DBF4F00E1328D /* UIKit.framework */; };
@@ -24,6 +25,7 @@
 		657EBA44197DBF4F00E1328D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 657EBA42197DBF4F00E1328D /* InfoPlist.strings */; };
 		657EBA46197DBF4F00E1328D /* RespTrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EBA45197DBF4F00E1328D /* RespTrainingTests.m */; };
 		657EBA54197DD00300E1328D /* RTStatusMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EBA53197DD00300E1328D /* RTStatusMessages.m */; };
+		65F3A5DD198B361D00AE90D5 /* RTMedianFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F3A5DC198B361D00AE90D5 /* RTMedianFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		656AF5431980611B00B60C09 /* SBData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBData.m; sourceTree = "<group>"; };
 		656AF5461980623700B60C09 /* SBGraphViewFwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGraphViewFwd.h; sourceTree = "<group>"; };
 		656AF5471980623700B60C09 /* SBGraphViewFwd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGraphViewFwd.m; sourceTree = "<group>"; };
+		656B736D19882FFF00F06B05 /* RTLowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLowPassFilter.h; sourceTree = "<group>"; };
+		656B736E19882FFF00F06B05 /* RTLowPassFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLowPassFilter.m; sourceTree = "<group>"; };
 		657EBA17197DBF4F00E1328D /* RespTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RespTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657EBA1A197DBF4F00E1328D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +66,8 @@
 		657EBA45197DBF4F00E1328D /* RespTrainingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RespTrainingTests.m; sourceTree = "<group>"; };
 		657EBA52197DD00300E1328D /* RTStatusMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTStatusMessages.h; sourceTree = "<group>"; };
 		657EBA53197DD00300E1328D /* RTStatusMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTStatusMessages.m; sourceTree = "<group>"; };
+		65F3A5DB198B361D00AE90D5 /* RTMedianFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMedianFilter.h; sourceTree = "<group>"; };
+		65F3A5DC198B361D00AE90D5 /* RTMedianFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMedianFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,10 @@
 				657EBA2C197DBF4F00E1328D /* Main.storyboard */,
 				657EBA52197DD00300E1328D /* RTStatusMessages.h */,
 				657EBA53197DD00300E1328D /* RTStatusMessages.m */,
+				65F3A5DB198B361D00AE90D5 /* RTMedianFilter.h */,
+				65F3A5DC198B361D00AE90D5 /* RTMedianFilter.m */,
+				656B736D19882FFF00F06B05 /* RTLowPassFilter.h */,
+				656B736E19882FFF00F06B05 /* RTLowPassFilter.m */,
 				657EBA2F197DBF4F00E1328D /* RTViewController.h */,
 				657EBA30197DBF4F00E1328D /* RTViewController.m */,
 				656AF5451980612B00B60C09 /* Imported Classes */,
@@ -278,6 +288,8 @@
 				657EBA27197DBF4F00E1328D /* main.m in Sources */,
 				656AF5441980611B00B60C09 /* SBData.m in Sources */,
 				656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */,
+				65F3A5DD198B361D00AE90D5 /* RTMedianFilter.m in Sources */,
+				656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */,
 				657EBA54197DD00300E1328D /* RTStatusMessages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

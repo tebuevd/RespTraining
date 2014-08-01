@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+//device frequency
+static const double filterRate = 50;
+static const double filterCutoffFrequency = 2;
+
 @interface RTViewController : UIViewController <NSStreamDelegate>
 
 @end

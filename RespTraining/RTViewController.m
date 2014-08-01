@@ -10,15 +10,16 @@
 #import "RTStatusMessages.h"
 #import "SBGraphViewFwd.h"
 #import "SBData.h"
-
-//device frequency
-static const NSInteger deviceFrequency = 50;
+#import "RTLowPassFilter.h"
+#import "RTMedianFilter.h"
 
 @interface RTViewController ()
 //this handles connecting to the device
 @property (strong, nonatomic) NSInputStream *connection;
 
 @property (strong, nonatomic) SBRespData *dataObject;
+@property (strong, nonatomic) RTLowPassFilter *filter;
+@property (atomic) BOOL filterFlag;
 
 @property (strong, nonatomic) NSDate *today; //keep track of time
 @property (strong, nonatomic) NSDateFormatter *formatter;
@@ -30,6 +31,7 @@ static const NSInteger deviceFrequency = 50;
 @property (weak, nonatomic) IBOutlet SBGraphViewFwd *graphView;
 //allows to control the sampling frequency
 @property (weak, nonatomic) IBOutlet UISlider *rateSlider;
+@property (weak, atomic) IBOutlet UIButton *lowPassButton;
 @end
 
 @implementation RTViewController
@@ -37,6 +39,9 @@ static const NSInteger deviceFrequency = 50;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.filter = [[RTLowPassFilter alloc] initWithSampleRate:filterRate
+                                         cutoffFrequency:filterCutoffFrequency];
+    self.filterFlag = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +71,12 @@ static const NSInteger deviceFrequency = 50;
     [self initNetworkConnection];
 }
 
+- (IBAction)toggleFilter:(id)sender {
+    self.filterFlag = !self.filterFlag;
+    UIButton *button = sender;
+    [button setSelected:!button.selected];
+}
+
 //lazy instantiations
 - (SBRespData *)dataObject
 {
@@ -85,13 +96,18 @@ static const NSInteger deviceFrequency = 50;
 //method that takes care of processing the newly arrived value
 - (void)processData:(int)value
 {
+    //sampling
     if (self.packetCount++ % (int)self.rateSlider.value) return;
-//    if (value > 462 || value < 440) return;
     //calculate the time interval since the start of the app
     NSDate *now = [NSDate date];
     double dt = [now timeIntervalSinceDate:self.today];
     NSLog(@"Value: %d Time: %f", value, dt);
-    [self.graphView addX:value];
+    
+    [self.filter addValue:(double)value];
+    if (self.filterFlag) {
+        [self.graphView addX:self.filter.x];
+    }
+    else [self.graphView addX:value];
 }
 
 //wrapper method to update the state of the connect button
@@ -122,8 +138,7 @@ static const NSInteger deviceFrequency = 50;
                     buffer[len] = '\0'; //put an end to the string
                     if (len > 0) {
                         int value = atoi((const char *)buffer);
-                        //ignore that first 0 then process the data
-                        if (value) [self processData:value];
+                        [self processData:value];
                     }
                 }
                 
