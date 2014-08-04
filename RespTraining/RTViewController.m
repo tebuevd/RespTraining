@@ -18,7 +18,8 @@
 @property (strong, nonatomic) NSInputStream *connection;
 
 @property (strong, nonatomic) SBRespData *dataObject;
-@property (strong, nonatomic) RTMedianFilter *filter;
+@property (strong, nonatomic) RTMedianFilter *mFilter;
+@property (strong, nonatomic) RTLowPassFilter *lFilter;
 @property (atomic) BOOL filterFlag;
 
 @property (strong, nonatomic) NSDate *today; //keep track of time
@@ -39,7 +40,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.filter = [[RTMedianFilter alloc] initWithOrder:3];
+    self.mFilter = [[RTMedianFilter alloc] init];
+    self.lFilter = [[RTLowPassFilter alloc] initWithSampleRate:filterRate
+                                               cutoffFrequency:filterCutoffFrequency];
     self.filterFlag = NO;
 }
 
@@ -101,15 +104,16 @@
     NSDate *now = [NSDate date];
     double dt = [now timeIntervalSinceDate:self.today];
     
-    [self.filter addValue:(double)value];
-    if (self.filterFlag) {
-        [self.graphView addX:self.filter.x];
-        NSLog(@"Value: %f Time: %f", self.filter.x, dt);
-    }
-    else {
-        [self.graphView addX:value];
-        NSLog(@"Value: %d Time: %f", value, dt);
-    }
+    [self.mFilter addValue:(double)value]; //median pass
+    [self.lFilter addValue:self.mFilter.x];//low-pass
+    
+//    if (self.filterFlag) {
+        [self.graphView addX:-self.lFilter.x];
+        NSLog(@"Value: %f Time: %f", self.lFilter.x, dt);
+//    } else {
+//        [self.graphView addX:-value];
+//        NSLog(@"Value: %d Time: %f", value, dt);
+//    }
     
 }
 
