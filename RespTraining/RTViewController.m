@@ -98,8 +98,8 @@
 //method that takes care of processing the newly arrived value
 - (void)processData:(int)value
 {
-    //sampling
-    if (self.packetCount++ % (int)self.rateSlider.value) return;
+    //sampling - disabled for now
+    //if (self.packetCount++ % (int)self.rateSlider.value) return;
     //calculate the time interval since the start of the app
     NSDate *now = [NSDate date];
     double dt = [now timeIntervalSinceDate:self.today];

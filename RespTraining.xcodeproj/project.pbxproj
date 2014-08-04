@@ -10,13 +10,14 @@
 		656AF5441980611B00B60C09 /* SBData.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5431980611B00B60C09 /* SBData.m */; };
 		656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5471980623700B60C09 /* SBGraphViewFwd.m */; };
 		656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B736E19882FFF00F06B05 /* RTLowPassFilter.m */; };
+		657669F0198F0A73005B9DBB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657669EF198F0A73005B9DBB /* Main_iPad.storyboard */; };
 		657EBA1B197DBF4F00E1328D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1A197DBF4F00E1328D /* Foundation.framework */; };
 		657EBA1D197DBF4F00E1328D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */; };
 		657EBA1F197DBF4F00E1328D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1E197DBF4F00E1328D /* UIKit.framework */; };
 		657EBA25197DBF4F00E1328D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 657EBA23197DBF4F00E1328D /* InfoPlist.strings */; };
 		657EBA27197DBF4F00E1328D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EBA26197DBF4F00E1328D /* main.m */; };
 		657EBA2B197DBF4F00E1328D /* RTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EBA2A197DBF4F00E1328D /* RTAppDelegate.m */; };
-		657EBA2E197DBF4F00E1328D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657EBA2C197DBF4F00E1328D /* Main.storyboard */; };
+		657EBA2E197DBF4F00E1328D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657EBA2C197DBF4F00E1328D /* Main_iPhone.storyboard */; };
 		657EBA31197DBF4F00E1328D /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EBA30197DBF4F00E1328D /* RTViewController.m */; };
 		657EBA33197DBF4F00E1328D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657EBA32197DBF4F00E1328D /* Images.xcassets */; };
 		657EBA3A197DBF4F00E1328D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA39197DBF4F00E1328D /* XCTest.framework */; };
@@ -45,6 +46,7 @@
 		656AF5471980623700B60C09 /* SBGraphViewFwd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGraphViewFwd.m; sourceTree = "<group>"; };
 		656B736D19882FFF00F06B05 /* RTLowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLowPassFilter.h; sourceTree = "<group>"; };
 		656B736E19882FFF00F06B05 /* RTLowPassFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLowPassFilter.m; sourceTree = "<group>"; };
+		657669EF198F0A73005B9DBB /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		657EBA17197DBF4F00E1328D /* RespTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RespTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657EBA1A197DBF4F00E1328D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,7 +57,7 @@
 		657EBA28197DBF4F00E1328D /* RespTraining-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RespTraining-Prefix.pch"; sourceTree = "<group>"; };
 		657EBA29197DBF4F00E1328D /* RTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTAppDelegate.h; sourceTree = "<group>"; };
 		657EBA2A197DBF4F00E1328D /* RTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTAppDelegate.m; sourceTree = "<group>"; };
-		657EBA2D197DBF4F00E1328D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		657EBA2D197DBF4F00E1328D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		657EBA2F197DBF4F00E1328D /* RTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
 		657EBA30197DBF4F00E1328D /* RTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTViewController.m; sourceTree = "<group>"; };
 		657EBA32197DBF4F00E1328D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -138,9 +140,10 @@
 		657EBA20197DBF4F00E1328D /* RespTraining */ = {
 			isa = PBXGroup;
 			children = (
+				657669EF198F0A73005B9DBB /* Main_iPad.storyboard */,
+				657EBA2C197DBF4F00E1328D /* Main_iPhone.storyboard */,
 				657EBA29197DBF4F00E1328D /* RTAppDelegate.h */,
 				657EBA2A197DBF4F00E1328D /* RTAppDelegate.m */,
-				657EBA2C197DBF4F00E1328D /* Main.storyboard */,
 				657EBA52197DD00300E1328D /* RTStatusMessages.h */,
 				657EBA53197DD00300E1328D /* RTStatusMessages.m */,
 				65F3A5DB198B361D00AE90D5 /* RTMedianFilter.h */,
@@ -263,8 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				657EBA33197DBF4F00E1328D /* Images.xcassets in Resources */,
+				657669F0198F0A73005B9DBB /* Main_iPad.storyboard in Resources */,
 				657EBA25197DBF4F00E1328D /* InfoPlist.strings in Resources */,
-				657EBA2E197DBF4F00E1328D /* Main.storyboard in Resources */,
+				657EBA2E197DBF4F00E1328D /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,12 +325,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		657EBA2C197DBF4F00E1328D /* Main.storyboard */ = {
+		657EBA2C197DBF4F00E1328D /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				657EBA2D197DBF4F00E1328D /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		657EBA42197DBF4F00E1328D /* InfoPlist.strings */ = {
@@ -419,7 +423,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RespTraining/RespTraining-Prefix.pch";
 				INFOPLIST_FILE = "RespTraining/RespTraining-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -433,7 +439,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RespTraining/RespTraining-Prefix.pch";
 				INFOPLIST_FILE = "RespTraining/RespTraining-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
