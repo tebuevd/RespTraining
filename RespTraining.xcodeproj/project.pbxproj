@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6555BFE9199A926800AB2760 /* RTSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555BFE8199A926800AB2760 /* RTSettingsTableViewController.m */; };
 		656AF5441980611B00B60C09 /* SBData.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5431980611B00B60C09 /* SBData.m */; };
 		656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5471980623700B60C09 /* SBGraphViewFwd.m */; };
 		656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B736E19882FFF00F06B05 /* RTLowPassFilter.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6555BFE7199A926800AB2760 /* RTSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSettingsTableViewController.h; sourceTree = "<group>"; };
+		6555BFE8199A926800AB2760 /* RTSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSettingsTableViewController.m; sourceTree = "<group>"; };
 		656AF5421980611B00B60C09 /* SBData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBData.h; sourceTree = "<group>"; };
 		656AF5431980611B00B60C09 /* SBData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBData.m; sourceTree = "<group>"; };
 		656AF5461980623700B60C09 /* SBGraphViewFwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGraphViewFwd.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				656B736E19882FFF00F06B05 /* RTLowPassFilter.m */,
 				657EBA2F197DBF4F00E1328D /* RTViewController.h */,
 				657EBA30197DBF4F00E1328D /* RTViewController.m */,
+				6555BFE7199A926800AB2760 /* RTSettingsTableViewController.h */,
+				6555BFE8199A926800AB2760 /* RTSettingsTableViewController.m */,
 				656AF5451980612B00B60C09 /* Imported Classes */,
 				657EBA32197DBF4F00E1328D /* Images.xcassets */,
 				657EBA21197DBF4F00E1328D /* Supporting Files */,
@@ -292,6 +297,7 @@
 				657EBA27197DBF4F00E1328D /* main.m in Sources */,
 				656AF5441980611B00B60C09 /* SBData.m in Sources */,
 				656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */,
+				6555BFE9199A926800AB2760 /* RTSettingsTableViewController.m in Sources */,
 				65F3A5DD198B361D00AE90D5 /* RTMedianFilter.m in Sources */,
 				656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */,
 				657EBA54197DD00300E1328D /* RTStatusMessages.m in Sources */,
