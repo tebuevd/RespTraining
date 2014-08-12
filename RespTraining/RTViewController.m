@@ -7,9 +7,9 @@
 //
 
 #import "RTViewController.h"
+#import "RTSettingsViewController.h"
 #import "RTStatusMessages.h"
 #import "SBGraphViewFwd.h"
-#import "SBData.h"
 #import "RTLowPassFilter.h"
 #import "RTMedianFilter.h"
 
@@ -17,7 +17,10 @@
 //this handles connecting to the device
 @property (strong, nonatomic) NSInputStream *connection;
 
-@property (strong, nonatomic) SBRespData *dataObject;
+//settings
+@property (nonatomic, getter=isLowPassOn) BOOL lowPassOn;
+@property (nonatomic, getter=isMedianPassOn) BOOL medianPassOn;
+
 @property (strong, nonatomic) RTMedianFilter *mFilter;
 @property (strong, nonatomic) RTLowPassFilter *lFilter;
 @property (atomic) BOOL filterFlag;
@@ -30,14 +33,11 @@
 //UI elements
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet SBGraphViewFwd *graphView;
-//allows to control the sampling frequency
-@property (weak, nonatomic) IBOutlet UISlider *rateSlider;
-@property (weak, atomic) IBOutlet UIButton *lowPassButton;
 @end
 
 @implementation RTViewController
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
     self.mFilter = [[RTMedianFilter alloc] init];
@@ -46,14 +46,30 @@
     self.filterFlag = NO;
 }
 
-- (void)didReceiveMemoryWarning
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void)updateLowPass:(BOOL)lowPassOn medianPass:(BOOL)medianPassOn
+{
+    self.lowPassOn = lowPassOn;
+    self.medianPassOn = medianPassOn;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"MainToSettings"]) {
+        RTSettingsViewController *vc = (RTSettingsViewController *)[[segue destinationViewController] topViewController];
+        vc.delegate = self;
+        vc.lowPassOn = self.isLowPassOn;
+        vc.medianPassOn = self.isMedianPassOn;
+    }
+}
+
 //establish connection with server
-- (void)initNetworkConnection
+-(void)initNetworkConnection
 {
     //TODO: add a timeout
     [self.connectButton setTitle:kStatusConnecting
@@ -77,13 +93,6 @@
     self.filterFlag = !self.filterFlag;
     UIButton *button = sender;
     [button setSelected:!button.selected];
-}
-
-//lazy instantiations
-- (SBRespData *)dataObject
-{
-    if (!_dataObject) _dataObject = [[SBRespData alloc] init];
-    return _dataObject;
 }
 
 - (NSDateFormatter *)formatter

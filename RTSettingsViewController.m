@@ -1,18 +1,19 @@
 //
-//  RTSettingsTableViewController.m
+//  RTSettingsViewController.m
 //  RespTraining
 //
 //  Created by Dinislam Tebuev on 8/12/14.
 //  Copyright (c) 2014 Dinislam Tebuev. All rights reserved.
 //
 
-#import "RTSettingsTableViewController.h"
+#import "RTSettingsViewController.h"
 
-@interface RTSettingsTableViewController ()
-
+@interface RTSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *lowPassSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *medianPassSwitch;
 @end
 
-@implementation RTSettingsTableViewController
+@implementation RTSettingsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,12 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.lowPassSwitch.on = self.isLowPassOn;
+    self.medianPassSwitch.on = self.isMedianPassOn;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +38,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+//dismisses the view controller
+- (IBAction)done:(id)sender {
+    [self.delegate updateLowPass:self.lowPassSwitch.isOn medianPass:self.medianPassSwitch.isOn];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/*
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -55,6 +60,7 @@
     // Return the number of rows in the section.
     return 0;
 }
+ */
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
