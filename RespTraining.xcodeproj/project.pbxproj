@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65267E65199BEEEB004C84D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65267E64199BEEEB004C84D8 /* AVFoundation.framework */; };
 		656AF5441980611B00B60C09 /* SBData.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5431980611B00B60C09 /* SBData.m */; };
 		656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AF5471980623700B60C09 /* SBGraphViewFwd.m */; };
 		656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B736E19882FFF00F06B05 /* RTLowPassFilter.m */; };
 		657669F0198F0A73005B9DBB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657669EF198F0A73005B9DBB /* Main_iPad.storyboard */; };
+		657BC5A5199BEC0900B8000D /* BIDE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657BC5A4199BEC0900B8000D /* BIDE.mp3 */; };
 		657EBA1B197DBF4F00E1328D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1A197DBF4F00E1328D /* Foundation.framework */; };
 		657EBA1D197DBF4F00E1328D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */; };
 		657EBA1F197DBF4F00E1328D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EBA1E197DBF4F00E1328D /* UIKit.framework */; };
@@ -28,6 +30,7 @@
 		657EBA54197DD00300E1328D /* RTStatusMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EBA53197DD00300E1328D /* RTStatusMessages.m */; };
 		65F3A5DD198B361D00AE90D5 /* RTMedianFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F3A5DC198B361D00AE90D5 /* RTMedianFilter.m */; };
 		65FE6DFB199AB6AE001E6DA7 /* RTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FE6DFA199AB6AE001E6DA7 /* RTSettingsViewController.m */; };
+		65FE6DFE199AC609001E6DA7 /* RTHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FE6DFD199AC609001E6DA7 /* RTHelpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65267E64199BEEEB004C84D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		656AF5421980611B00B60C09 /* SBData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBData.h; sourceTree = "<group>"; };
 		656AF5431980611B00B60C09 /* SBData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBData.m; sourceTree = "<group>"; };
 		656AF5461980623700B60C09 /* SBGraphViewFwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGraphViewFwd.h; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		656B736D19882FFF00F06B05 /* RTLowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLowPassFilter.h; sourceTree = "<group>"; };
 		656B736E19882FFF00F06B05 /* RTLowPassFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLowPassFilter.m; sourceTree = "<group>"; };
 		657669EF198F0A73005B9DBB /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		657BC5A2199BEB6300B8000D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		657BC5A4199BEC0900B8000D /* BIDE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BIDE.mp3; sourceTree = "<group>"; };
 		657EBA17197DBF4F00E1328D /* RespTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RespTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657EBA1A197DBF4F00E1328D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,6 +79,8 @@
 		65F3A5DC198B361D00AE90D5 /* RTMedianFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMedianFilter.m; sourceTree = "<group>"; };
 		65FE6DF9199AB6AE001E6DA7 /* RTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTSettingsViewController.h; path = ../RTSettingsViewController.h; sourceTree = "<group>"; };
 		65FE6DFA199AB6AE001E6DA7 /* RTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTSettingsViewController.m; path = ../RTSettingsViewController.m; sourceTree = "<group>"; };
+		65FE6DFC199AC609001E6DA7 /* RTHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHelpViewController.h; sourceTree = "<group>"; };
+		65FE6DFD199AC609001E6DA7 /* RTHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHelpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65267E65199BEEEB004C84D8 /* AVFoundation.framework in Frameworks */,
 				657EBA1D197DBF4F00E1328D /* CoreGraphics.framework in Frameworks */,
 				657EBA1F197DBF4F00E1328D /* UIKit.framework in Frameworks */,
 				657EBA1B197DBF4F00E1328D /* Foundation.framework in Frameworks */,
@@ -132,6 +141,8 @@
 		657EBA19197DBF4F00E1328D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65267E64199BEEEB004C84D8 /* AVFoundation.framework */,
+				657BC5A2199BEB6300B8000D /* AudioToolbox.framework */,
 				657EBA1A197DBF4F00E1328D /* Foundation.framework */,
 				657EBA1C197DBF4F00E1328D /* CoreGraphics.framework */,
 				657EBA1E197DBF4F00E1328D /* UIKit.framework */,
@@ -153,6 +164,8 @@
 				65F3A5DC198B361D00AE90D5 /* RTMedianFilter.m */,
 				656B736D19882FFF00F06B05 /* RTLowPassFilter.h */,
 				656B736E19882FFF00F06B05 /* RTLowPassFilter.m */,
+				65FE6DFC199AC609001E6DA7 /* RTHelpViewController.h */,
+				65FE6DFD199AC609001E6DA7 /* RTHelpViewController.m */,
 				657EBA2F197DBF4F00E1328D /* RTViewController.h */,
 				657EBA30197DBF4F00E1328D /* RTViewController.m */,
 				65FE6DF9199AB6AE001E6DA7 /* RTSettingsViewController.h */,
@@ -167,6 +180,7 @@
 		657EBA21197DBF4F00E1328D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				657BC5A4199BEC0900B8000D /* BIDE.mp3 */,
 				657EBA22197DBF4F00E1328D /* RespTraining-Info.plist */,
 				657EBA23197DBF4F00E1328D /* InfoPlist.strings */,
 				657EBA26197DBF4F00E1328D /* main.m */,
@@ -272,6 +286,7 @@
 			files = (
 				657EBA33197DBF4F00E1328D /* Images.xcassets in Resources */,
 				657669F0198F0A73005B9DBB /* Main_iPad.storyboard in Resources */,
+				657BC5A5199BEC0900B8000D /* BIDE.mp3 in Resources */,
 				657EBA25197DBF4F00E1328D /* InfoPlist.strings in Resources */,
 				657EBA2E197DBF4F00E1328D /* Main_iPhone.storyboard in Resources */,
 			);
@@ -297,6 +312,7 @@
 				657EBA27197DBF4F00E1328D /* main.m in Sources */,
 				656AF5441980611B00B60C09 /* SBData.m in Sources */,
 				656AF5481980623700B60C09 /* SBGraphViewFwd.m in Sources */,
+				65FE6DFE199AC609001E6DA7 /* RTHelpViewController.m in Sources */,
 				65F3A5DD198B361D00AE90D5 /* RTMedianFilter.m in Sources */,
 				656B736F19882FFF00F06B05 /* RTLowPassFilter.m in Sources */,
 				657EBA54197DD00300E1328D /* RTStatusMessages.m in Sources */,

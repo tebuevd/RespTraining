@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Dinislam Tebuev. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "RTViewController.h"
 #import "RTSettingsViewController.h"
 #import "RTStatusMessages.h"
@@ -16,6 +17,9 @@
 @interface RTViewController ()
 //this handles connecting to the device
 @property (strong, nonatomic) NSInputStream *connection;
+
+//sound to be played
+@property (nonatomic, strong) AVAudioPlayer *sound;
 
 //settings
 @property (nonatomic, getter=isLowPassOn) BOOL lowPassOn;
@@ -33,13 +37,28 @@
 //UI elements
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet SBGraphViewFwd *graphView;
+@property (weak, nonatomic) IBOutlet UIButton *playSoundButton;
 @end
 
 @implementation RTViewController
 
+- (IBAction)playSound:(id)sender {
+    if ([self.playSoundButton.titleLabel.text isEqualToString:@"►"]) {
+        NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"BIDE" ofType:@"mp3"]];
+        self.sound = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+        [self.sound setVolume:1.0];
+        [self.sound play];
+        [self.playSoundButton setTitle:@"◼︎" forState:UIControlStateNormal];
+    } else {
+        [self.sound stop];
+        [self.playSoundButton setTitle:@"►" forState:UIControlStateNormal];
+    }
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    //set up filters
     self.mFilter = [[RTMedianFilter alloc] init];
     self.lFilter = [[RTLowPassFilter alloc] initWithSampleRate:filterRate
                                                cutoffFrequency:filterCutoffFrequency];

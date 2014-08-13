@@ -15,6 +15,8 @@ static const double filterCutoffFrequency = 2;
 
 @interface RTViewController : UIViewController <NSStreamDelegate, RTSettingsViewControllerDelegate>
 
+//delegate method
 -(void)updateLowPass:(BOOL)lowPassOn medianPass:(BOOL)medianPassOn;
+
 
 @end
