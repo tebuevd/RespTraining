@@ -8,8 +8,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "RTViewController.h"
-#import "RTSettingsViewController.h"
-#import "RTStatusMessages.h"
 #import "SBGraphViewFwd.h"
 #import "RTLowPassFilter.h"
 #import "RTMedianFilter.h"
@@ -22,8 +20,11 @@
 @property (nonatomic, strong) AVAudioPlayer *sound;
 
 //settings
+@property (nonatomic) Settings settings;
+
 @property (nonatomic, getter=isLowPassOn) BOOL lowPassOn;
 @property (nonatomic, getter=isMedianPassOn) BOOL medianPassOn;
+@property (nonatomic) NSInteger audioFileName;
 
 @property (strong, nonatomic) RTMedianFilter *mFilter;
 @property (strong, nonatomic) RTLowPassFilter *lFilter;
@@ -42,6 +43,7 @@
 
 @implementation RTViewController
 
+//this method plays sound and turns the button into a stop button
 - (IBAction)playSound:(id)sender {
     if ([self.playSoundButton.titleLabel.text isEqualToString:@"►"]) {
         NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"BIDE" ofType:@"mp3"]];
@@ -77,6 +79,16 @@
     self.medianPassOn = medianPassOn;
 }
 
+-(void)updateSoundFileChoice:(NSInteger)choice
+{
+    self.audioFileName = choice;
+}
+
+-(void)updateSettings:(Settings)settings
+{
+    self.settings = settings;
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"MainToSettings"]) {
@@ -84,6 +96,7 @@
         vc.delegate = self;
         vc.lowPassOn = self.isLowPassOn;
         vc.medianPassOn = self.isMedianPassOn;
+        vc.audioFileName = self.audioFileName;
     }
 }
 
@@ -106,12 +119,6 @@
 //called when button pressed
 - (IBAction)connectToDevice {
     [self initNetworkConnection];
-}
-
-- (IBAction)toggleFilter:(id)sender {
-    self.filterFlag = !self.filterFlag;
-    UIButton *button = sender;
-    [button setSelected:!button.selected];
 }
 
 - (NSDateFormatter *)formatter

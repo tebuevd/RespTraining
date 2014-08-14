@@ -184,6 +184,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <pickerView key="tableFooterView" contentMode="scaleToFill" id="VJe-pg-ctp">
+                            <rect key="frame" x="0.0" y="237" width="320" height="216"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </pickerView>
                         <sections>
                             <tableViewSection headerTitle="Filters" footerTitle="Set your preferences for filters" id="8B1-9R-KKY">
                                 <cells>
@@ -258,6 +262,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="audioFilePicker" destination="VJe-pg-ctp" id="pvk-2C-7Uq"/>
                         <outlet property="lowPassSwitch" destination="8mN-uQ-PIg" id="47e-4a-0p9"/>
                         <outlet property="medianPassSwitch" destination="r6w-Kj-Eu0" id="4iV-gd-HwL"/>
                     </connections>

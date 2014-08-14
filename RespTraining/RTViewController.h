@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RTSettingsViewController.h"
+#import "RTConstants.h"
 
 //device frequency
 static const double filterRate = 50;
@@ -15,8 +16,11 @@ static const double filterCutoffFrequency = 2;
 
 @interface RTViewController : UIViewController <NSStreamDelegate, RTSettingsViewControllerDelegate>
 
-//delegate method
+//delegate methods - deprecated
 -(void)updateLowPass:(BOOL)lowPassOn medianPass:(BOOL)medianPassOn;
+-(void)updateSoundFileChoice:(NSInteger)choice;
 
+//delegate methods - preferred
+-(void)updateSettings:(Settings)settings;
 
 @end

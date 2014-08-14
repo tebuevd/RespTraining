@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RTConstants.h"
 
 @protocol RTSettingsViewControllerDelegate <NSObject>
 
--(void)updateLowPass:(BOOL)lowPassOn medianPass:(BOOL)medianPassOn;
+-(void)updateLowPass:(BOOL)lowPassOn medianPass:(BOOL)medianPassOn; //deprecated
+-(void)updateSoundFileChoice:(NSInteger)choice; //deprecated
+-(void)updateSettings:(Settings)settings; //preferred
 
 @end
 
-@interface RTSettingsViewController : UITableViewController
+@interface RTSettingsViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, weak) id <RTSettingsViewControllerDelegate> delegate;
+@property (nonatomic) Settings settings;
 @property (nonatomic, getter=isLowPassOn) BOOL lowPassOn;
 @property (nonatomic, getter=isMedianPassOn) BOOL medianPassOn;
+@property (nonatomic) NSInteger audioFileName;
 
 @end
